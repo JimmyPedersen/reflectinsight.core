@@ -22,25 +22,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Common\NewFolder\**" />
-    <EmbeddedResource Remove="Common\NewFolder\**" />
-    <None Remove="Common\NewFolder\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\ReflectInsight.Core.licenseheader" Link="ReflectInsight.Core.licenseheader" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MSMQ.Messaging" Version="1.0.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Plato.NetCore" Version="2021.5.6.1" />
-    <PackageReference Include="Plato.NetCore.Configuration" Version="2021.5.6.1" />
-    <PackageReference Include="Plato.NetCore.Security" Version="2021.5.6.1" />
-    <PackageReference Include="Plato.NetCore.Serializers" Version="2021.5.6.1" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
-    <PackageReference Include="System.Diagnostics.EventLog" Version="8.0.0" />
-    <PackageReference Include="System.Threading.AccessControl" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Plato.NetCore" Version="2020.1.16.3" />
+    <PackageReference Include="Plato.NetCore.Configuration" Version="2020.1.16.3" />
+    <PackageReference Include="Plato.NetCore.Security" Version="2020.1.16.3" />
+    <PackageReference Include="Plato.NetCore.Serializers" Version="2020.1.16.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\NewFolder1\" />
+    <Folder Include="Common\NewFolder\NewFolder\" />
   </ItemGroup>
 
 </Project>

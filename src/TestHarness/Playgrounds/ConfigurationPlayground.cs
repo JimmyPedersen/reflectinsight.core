@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ReflectSoftware.Insight;
+﻿using ReflectSoftware.Insight;
+using System;
 
 namespace TestHarness.Playgrounds
 {
@@ -10,6 +8,13 @@ namespace TestHarness.Playgrounds
         static public void Run()
         {
             var ri = RILogManager.Get("Test");
+
+            Console.WriteLine($"Active group:{RIListenerGroupManager.ActiveGroup.Name}");
+            /*
+                        var useGroup = RIListenerGroupManager.Get("DevelopmentGroup");
+                        RIListenerGroupManager.ActiveGroup = useGroup;
+                        Console.WriteLine($"New Active group:{RIListenerGroupManager.ActiveGroup.Name}");
+            */
 
             ri.EnterMethod("MyEnter");
             ri.SendMessage("Test1");

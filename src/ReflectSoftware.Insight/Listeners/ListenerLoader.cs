@@ -10,17 +10,18 @@ using System.Text.RegularExpressions;
 
 namespace ReflectSoftware.Insight
 {
-	static internal class ListenerLoader
-	{
-        private readonly static Hashtable FListenerTypeList;        
+    static internal class ListenerLoader
+    {
+        private readonly static Hashtable FListenerTypeList;
         private readonly static Hashtable FAssemblies;
 
-		static ListenerLoader()
-		{
+        static ListenerLoader()
+        {
             FAssemblies = new Hashtable();
 
             FListenerTypeList = new Hashtable
-            {                
+            {
+                ["Viewer"] = "ReflectSoftware.Insight.ListenerViewer, ReflectSoftware.Insight",
                 ["BinaryFile"] = "ReflectSoftware.Insight.ListenerBinaryFile, ReflectSoftware.Insight",
                 ["TextFile"] = "ReflectSoftware.Insight.ListenerTextFile, ReflectSoftware.Insight",
                 ["Console"] = "ReflectSoftware.Insight.ListenerConsole, ReflectSoftware.Insight",
@@ -39,7 +40,7 @@ namespace ReflectSoftware.Insight
             var sList = regSeparate.Split(typeString);
 
             if (sList.Length != 2)
-            {                
+            {
                 throw new ReflectInsightException(String.Format("Invalid Object type setting '{0}'.", typeString));
             }
 
@@ -49,7 +50,7 @@ namespace ReflectSoftware.Insight
             var oAssembly = (Assembly)FAssemblies[objectAssembly];
 
             if (oAssembly == null)
-            { 
+            {
                 oAssembly = AppDomain.CurrentDomain.Load(objectAssembly);
                 FAssemblies[objectAssembly] = oAssembly;
             }
@@ -89,5 +90,5 @@ namespace ReflectSoftware.Insight
                 return rValue;
             }
         }
-	}
+    }
 }

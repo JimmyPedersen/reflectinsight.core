@@ -28,6 +28,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Common\Threading\Worker\BaseThread.cs" />
+    <Compile Remove="Common\Threading\Worker\BaseWorker.cs" />
+    <Compile Remove="Common\Threading\Worker\DelegateThread.cs" />
+    <Compile Remove="Common\Threading\Worker\MessageManager.cs" />
+    <Compile Remove="Common\Threading\Worker\MessageManagerInfo.cs" />
+    <Compile Remove="Common\Threading\Worker\Notification.cs" />
+    <Compile Remove="Common\Threading\Worker\ThreadWatcher.cs" />
+    <Compile Remove="Common\Threading\Worker\WorkManager.cs" />
+    <Compile Remove="Common\Threading\Worker\WorkManagerConfig.cs" />
+    <Compile Remove="Common\Threading\Worker\WorkManagerException.cs" />
+    <Compile Remove="Common\Threading\Worker\WorkManagerNotification.cs" />
+    <Compile Remove="Helpers\ClassFactory.cs" />
+    <Compile Remove="Helpers\ExceptionManagement.cs" />
+    <Compile Remove="Helpers\ExceptionManagerBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\ReflectInsight.Core.licenseheader" Link="ReflectInsight.Core.licenseheader" />
   </ItemGroup>
 
@@ -41,6 +58,10 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
     <PackageReference Include="System.Diagnostics.EventLog" Version="8.0.0" />
     <PackageReference Include="System.Threading.AccessControl" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Threading\Worker\" />
   </ItemGroup>
 
 </Project>
